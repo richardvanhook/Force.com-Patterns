@@ -1,0 +1,2 @@
+AcmeEnvironment.amazonS3PrivateKey = 'abc123';
+System.debug(AcmeEnvironment.amazonS3PrivateKey);
