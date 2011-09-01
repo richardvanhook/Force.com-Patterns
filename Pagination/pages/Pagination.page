@@ -1,0 +1,26 @@
+<apex:page controller="DF2011_PaginationController">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockButtons >
+    <apex:commandButton value="Previous" action="{!setController.previous}" rendered="{!setController.hasPrevious}"/>
+    <apex:commandButton value="Next" action="{!setController.next}" rendered="{!setController.hasNext}"/>
+    <apex:commandButton value="Filter" action="{!filterRecords}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Filter Criteria" collapsible="false" >
+<apex:outputLabel for="empsizeFilter">Employee Size:</apex:outputLabel>
+<apex:inputText id="empsizeFilter" value="{!empSize}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Filter Results:  Displaying {!records.size} of {!setController.resultSize}" collapsible="false">
+<apex:pageBlockTable value="{!records}" var="accountRec">
+<apex:column value="{!accountRec.Name}">
+</apex:column>
+<apex:column >
+<apex:inputField value="{!accountRec.BillingStreet}"/>
+</apex:column>
+<apex:column value="{!accountRec.BillingPostalCode}"/>
+<apex:column value="{!accountRec.NumberOfEmployees}"/>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>
