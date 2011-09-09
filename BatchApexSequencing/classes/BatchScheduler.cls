@@ -21,7 +21,7 @@ global class BatchScheduler implements Schedulable{
 			System.debug('There are no jobs currently scheduled.'); 
 		}
 		//Call your next Apex Batch class 
-		if(batchStep == STEP_2){
+		if(batchMode == STEP_2){
 			SecondBatch 2ndBatch = new SecondBatch(); 
 			Database.executeBatch(2ndBatch);
 		}
