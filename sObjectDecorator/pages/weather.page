@@ -1,0 +1,29 @@
+<apex:page controller="weather_controller">
+
+	<!-- VF page to render the weather records with Ajax that only rerenders 
+		 the page on change of the temperature
+	-->
+    <apex:form id="theForm">
+        <apex:pageBlock id="pageBlock">
+            <apex:pageBlockTable value="{!listOfWeather}" var="weather">
+                <apex:column value="{!weather.weather.name}"/>
+                <apex:column headerValue="Temperature (C)">
+                    <apex:actionRegion >
+                        <apex:inputText value="{!weather.tempInCelcius}">
+                            <apex:actionSupport event="onchange"
+                                            reRender="pageBlock"/>
+                        </apex:inputText>
+                    </apex:actionRegion>
+                </apex:column>
+                <apex:column headerValue="Temperature (F)"
+                                value="{!weather.weather.Temperature__c}"
+                                id="tempInF"/>
+                
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!SaveRecords}" title="Save" value="Save" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>
