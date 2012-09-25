@@ -5,7 +5,6 @@ Example implementation of Strategy Design Pattern in Apex using Geocoding as the
 1. Deploy Custom Setting: GlobalVariable__c
 1. Deploy four classes: Geocoder, GeocodeService, GoogleMapsImpl, and MapQuestImpl
 1. Run following code to create record in Custom Setting:
-
     GlobalVariable__c record = null;
     try{
         record = [select id,value__c from GlobalVariable__c where name = 'strategies'];
