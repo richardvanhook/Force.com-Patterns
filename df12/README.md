@@ -1,4 +1,4 @@
-Code shown during Dreamforce 2012 *Apex Design Patterns* session on September 18, 2012.
+Code shown during Dreamforce 2012 **Apex Design Patterns** session on September 18, 2012 as presented by [Dennis Thong](https://twitter.com/denniscfthong) and [Richard Vanhook](https://twitter.com/richardvanhook).
 
 To dive into a specific pattern, click a link above
 
